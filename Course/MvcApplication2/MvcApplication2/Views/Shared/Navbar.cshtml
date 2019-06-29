@@ -1,0 +1,22 @@
+﻿@{
+    var site = (MvcApplication2.Models.WebsiteInfo)ViewBag.Site;
+    }
+  <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("WebsiteInfo", "Index", "Home",new {area =""},new {@class="navbar-brand"} )</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            @foreach (var Link in site.ActionLinks)
+                            { 
+                                 <li>@Html.ActionLink(Link.Name, Link.Action, Link.Contorller)</li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+   

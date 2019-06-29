@@ -1,0 +1,10 @@
+﻿@using MvcApplication2.Models
+@{
+    var sidebars = (List<MvcApplication2.Migrations.Seeds.SideBars>)ViewBag.SideBars;
+       }
+ <ul id="menu">
+                   @foreach (var sidebar in sidebars) { 
+                       
+                      <li>@Html.ActionLink(sidebar.Name,sidebar.Action, sidebar.Contorller,new {area =""},new {@class="navbar-brand"})</li>
+                   }
+     </ul>
