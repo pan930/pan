@@ -1,0 +1,22 @@
+﻿@{
+    var site = (MvcApplication2.Models.WebsiteInfo)ViewBag.Site;
+    }
+  <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("将你的徽标放置在此处", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            @foreach (var Link in site.ActionLinks)
+                            { 
+                                 <li>@Html.ActionLink("Link.Name", "Link.Action", "Link.Controller")</li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+   
